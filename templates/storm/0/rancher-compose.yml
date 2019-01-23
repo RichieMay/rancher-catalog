@@ -33,3 +33,30 @@
       default: "storm-zk/zk"
       required: true
       type: "service"
+nimbus:
+  scale: ${nimbus_scale}
+  health_check:
+    port: 6627
+    interval: 5000
+    unhealthy_threshold: 3
+    request_line: ''
+    healthy_threshold: 2
+    response_timeout: 5000
+supervisor:
+  scale: ${supervisor_scale}
+  health_check:
+    port: 6700
+    interval: 10000
+    unhealthy_threshold: 3
+    request_line: ''
+    healthy_threshold: 2
+    response_timeout: 5000
+ui:
+  scale: ${ui_scale}
+  health_check:
+    port: 8080
+    interval: 60000
+    unhealthy_threshold: 3
+    request_line: ''
+    healthy_threshold: 2
+    response_timeout: 10000
