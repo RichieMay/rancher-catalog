@@ -1,0 +1,9 @@
+name: Apache Storm
+description: |
+  Storm cluster
+version: 1.2.2-rancher1
+category: Clustering
+maintainer: "RichieMay <meibo@sefon.com>"
+minimum_rancher_version: v0.59.0
+license: 
+projectURL: https://github.com/clescot/rancher-storm
