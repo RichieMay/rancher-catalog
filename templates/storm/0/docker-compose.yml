@@ -1,43 +1,43 @@
 version: '2'
 services:
-	nimbus:
-	  tty: true
-	  command: --daemon nimbus
-	  image: fhuz/docker-storm
-	  ports:
-	    - "3773:3773"
-	    - "3772:3772"
-	    - "6627:6627"
-	  external_links:
-	  - ${zk_link}:zk
+    nimbus:
+        tty: true
+        command: --daemon nimbus
+        image: fhuz/docker-storm
+        ports:
+            - "3773:3773"
+            - "3772:3772"
+            - "6627:6627"
+        external_links:
+            - ${zk_link}:zk
 
-	supervisor:
-	  tty: true
-	  command: --daemon supervisor logviewer
-	  image: fhuz/docker-storm
-	  ports:
-	    - "8000:8000"
-	    - "6700:6700"
-	    - "6701:6701"
-	    - "6702:6702"
-	    - "6703:6703"
-	  links:
-	    - nimbus:nimbus
-	  external_links:
-	    - ${zk_link}:zk
-	  depends_on:
-	    - nimbus
+    supervisor:
+        tty: true
+        command: --daemon supervisor logviewer
+        image: fhuz/docker-storm
+        ports:
+            - "8000:8000"
+            - "6700:6700"
+            - "6701:6701"
+            - "6702:6702"
+            - "6703:6703"
+        links:
+            - nimbus:nimbus
+        external_links:
+            - ${zk_link}:zk
+        depends_on:
+            - nimbus
 
-	ui:
-	  tty: true
-	  command: --daemon ui
-	  image: fhuz/docker-storm
-	  ports:
-	    - "8080:8080"
-	  links:
-	    - nimbus:nimbus
-	  external_links:
-	    - ${zk_link}:zk
-	  depends_on:
-	    - nimbus
-	    - supervisor
+    ui:
+        tty: true
+        command: --daemon ui
+        image: fhuz/docker-storm
+        ports:
+            - "8080:8080"
+        links:
+            - nimbus:nimbus
+        external_links:
+            - ${zk_link}:zk
+        depends_on:
+            - nimbus
+            - supervisor
