@@ -7,6 +7,18 @@
   maintainer: "RichieMay <meibo@sefon.com>"
   uuid: storm-0
   questions:
+    - variable: "storm_env"
+      description: "Environment of Apollo Config."
+      label: "Storm Environment:"
+      required: true
+      default: "DEV" 
+      type: "string"
+    - variable: "storm_mem"
+      description: "Amount of memory to config storm."
+      label: "JVM Memory (mb):"
+      required: true
+      default: 1024
+      type: "int"
     - variable: "nimbus_scale"
       description: "Number of nimbus nodes."
       label: "Nimbus Nodes:"
