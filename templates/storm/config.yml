@@ -6,4 +6,4 @@ category: Clustering
 maintainer: "RichieMay <meibo@sefon.com>"
 minimum_rancher_version: v0.59.0
 license: 
-projectURL: https://github.com/clescot/rancher-storm
+projectURL: https://github.com/RichieMay/rancher-catalog
