@@ -24,7 +24,7 @@ supervisor:
   external_links:
     - ${zk_link}:zk
   depends_on:
-    - storm-nimbus
+    - nimbus
 
 ui:
   tty: true
@@ -37,5 +37,5 @@ ui:
   external_links:
     - ${zk_link}:zk
   depends_on:
-    - storm-nimbus
-    - storm-supervisor
+    - nimbus
+    - supervisor
