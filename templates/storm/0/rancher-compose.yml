@@ -11,7 +11,7 @@
       description: "Environment of Apollo Config."
       label: "Storm Environment:"
       required: true
-      default: 0
+      default: DEV
       type: "enum"
       options: # List of options if using type of `enum`
         - DEV
@@ -47,34 +47,4 @@
       description: |
         Choose the Zookeeper service to use. 
         It's really recommended a dedicated zookeeper service just for Storm.
-      label: "Zookeeper stack/service"
-      default: "storm-zk/zk"
-      required: true
-      type: "service"
-nimbus:
-  scale: ${nimbus_scale}
-  health_check:
-    port: 6627
-    interval: 5000
-    unhealthy_threshold: 3
-    request_line: ''
-    healthy_threshold: 2
-    response_timeout: 5000
-supervisor:
-  scale: ${supervisor_scale}
-  health_check:
-    port: 6700
-    interval: 10000
-    unhealthy_threshold: 3
-    request_line: ''
-    healthy_threshold: 2
-    response_timeout: 5000
-ui:
-  scale: ${ui_scale}
-  health_check:
-    port: 8080
-    interval: 60000
-    unhealthy_threshold: 3
-    request_line: ''
-    healthy_threshold: 2
-    response_timeout: 10000
+      
