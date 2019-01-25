@@ -3,7 +3,7 @@ services:
     nimbus:
         tty: true
         command: --daemon nimbus
-        image: richiemay/alpine-storm:1.1.2
+        image: registry.sefon.com/richiemay/alpine-storm:1.1.2
         ports:
             - "3773:3773"
             - "3772:3772"
@@ -18,7 +18,7 @@ services:
     supervisor:
         tty: true
         command: --daemon supervisor logviewer
-        image: richiemay/alpine-storm:1.1.2
+        image: registry.sefon.com/richiemay/alpine-storm:1.1.2
         ports:
             - "8000:8000"
             - "6700:6700"
@@ -39,7 +39,7 @@ services:
     ui:
         tty: true
         command: --daemon ui
-        image: richiemay/alpine-storm:1.1.2
+        image: registry.sefon.com/richiemay/alpine-storm:1.1.2
         ports:
             - "8080:8080"
         links:
