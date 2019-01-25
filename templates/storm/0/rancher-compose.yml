@@ -11,13 +11,13 @@
       description: "Environment of Apollo Config."
       label: "Storm Environment:"
       required: true
-      default: |
+      default: 0
       type: "enum"
       options: # List of options if using type of `enum`
-        - Option DEV
-        - Option FAT 
-        - Option UAT
-        - Option PRO
+        - DEV
+        - FAT 
+        - UAT
+        - PRO
         
     - variable: "storm_mem"
       description: "Amount of memory to config storm."
