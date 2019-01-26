@@ -11,7 +11,7 @@ services:
         environment:
             - env=${storm_env}
             - ZK_SERVICE=${zk_link}
-            - JVMFLAGS=-Xmx${storm_mem}m -Xms${storm_mem}m
+            - JVM_OPTS=-Xmx${storm_mem}m -Xms${storm_mem}m
 
     supervisor:
         tty: true
@@ -24,7 +24,7 @@ services:
         environment:
             - env=${storm_env}
             - ZK_SERVICE=${zk_link}
-            - JVMFLAGS=-Xmx${storm_mem}m -Xms${storm_mem}m
+            - JVM_OPTS=-Xmx${storm_mem}m -Xms${storm_mem}m
         depends_on:
             - nimbus
 
@@ -39,7 +39,7 @@ services:
         environment:
             - env=${storm_env}
             - ZK_SERVICE=${zk_link}
-            - JVMFLAGS=-Xmx${storm_mem}m -Xms${storm_mem}m
+            - JVM_OPTS=-Xmx${storm_mem}m -Xms${storm_mem}m
         depends_on:
             - nimbus
             - supervisor
