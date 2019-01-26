@@ -5,7 +5,7 @@ services:
         command: --daemon nimbus logviewer
         image: registry.locman.cn/sefon-public/alpine-storm:1.1.2
         ports:
-            - "8000:8000"
+            - "8081:8081"
         external_links:
             - ${zk_link}:zk
         environment:
@@ -18,7 +18,7 @@ services:
         command: --daemon supervisor logviewer
         image: registry.locman.cn/sefon-public/alpine-storm:1.1.2
         ports:
-            - "8000:8000"
+            - "8081:8081"
         external_links:
             - ${zk_link}:zk
         environment:
