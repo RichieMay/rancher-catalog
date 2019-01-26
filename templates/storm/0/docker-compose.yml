@@ -25,6 +25,8 @@ services:
             - "6701:6701"
             - "6702:6702"
             - "6703:6703"
+        links:
+            - nimbus
         external_links:
             - ${zk_link}:zk
         environment:
@@ -40,6 +42,9 @@ services:
         image: registry.locman.cn/sefon-public/alpine-storm:1.1.2
         ports:
             - "8080:8080"
+        links:
+            - nimbus
+            - supervisor  
         external_links:
             - ${zk_link}:zk
         environment:
