@@ -2,7 +2,7 @@ version: '2'
 services:
     nimbus:
         tty: true
-        command: --daemon nimbus
+        command: nimbus
         image: registry.locman.cn/sefon-public/alpine-storm:1.1.2
         ports:
             - "3773:3773"
@@ -17,7 +17,7 @@ services:
     
     supervisor:
         tty: true
-        command: --daemon supervisor logviewer
+        command: supervisor logviewer
         image: registry.locman.cn/sefon-public/alpine-storm:1.1.2
         ports:
             - "8000:8000"
@@ -38,7 +38,7 @@ services:
 
     ui:
         tty: true
-        command: --daemon ui
+        command: ui
         image: registry.locman.cn/sefon-public/alpine-storm:1.1.2
         ports:
             - "8080:8080"
