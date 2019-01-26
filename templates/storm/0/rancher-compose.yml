@@ -58,15 +58,6 @@ nimbus:
     request_line: ''
     healthy_threshold: 2
     response_timeout: 5000
-supervisor:
-  scale: ${supervisor_scale}
-  health_check:
-    port: 6700
-    interval: 15000
-    unhealthy_threshold: 3
-    request_line: ''
-    healthy_threshold: 2
-    response_timeout: 5000
 ui:
   scale: ${ui_scale}
   health_check:
