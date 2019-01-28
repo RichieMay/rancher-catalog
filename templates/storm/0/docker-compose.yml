@@ -15,7 +15,8 @@ services:
         labels:
             io.rancher.container.hostname_override: container_name
             io.rancher.scheduler.affinity:container_label_soft_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
-      
+        volumes:
+            - ${storm_data_dir}:${storm_data_dir}
     supervisor:
         tty: true
         command: --daemon supervisor logviewer
@@ -31,6 +32,8 @@ services:
         labels:
             io.rancher.container.hostname_override: container_name
             io.rancher.scheduler.affinity:container_label_soft_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
+        volumes:
+            - ${storm_data_dir}:${storm_data_dir}
         depends_on:
             - nimbus
 
@@ -49,6 +52,8 @@ services:
         labels:
             io.rancher.container.hostname_override: container_name
             io.rancher.scheduler.affinity:container_label_soft_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
+        volumes:
+            - ${storm_data_dir}:${storm_data_dir}
         depends_on:
             - nimbus
             - supervisor
