@@ -29,6 +29,17 @@
       required: true
       default: "/opt/storm/data"
       type: "string"
+    - variable: "volume_driver"
+      description: "The VOLUME driver to associate with this server"
+      label: "Volume Driver"
+      required: true
+      default: "local"
+      type: enum
+      options: # List of options if using type of `enum`
+        - local
+        - rancher-nfs
+        - rancher-efs
+        - rancher-ebs
     - variable: "nimbus_scale"
       description: "Number of nimbus nodes."
       label: "Nimbus Nodes:"
