@@ -12,7 +12,10 @@ services:
             - env=${storm_env}
             - ZK_SERVICE=${zk_link}
             - JVM_OPTS=-Xmx${storm_mem}m -Xms${storm_mem}m
-
+        labels:
+            io.rancher.container.hostname_override: container_name
+            io.rancher.scheduler.affinity:container_label_soft_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
+      
     supervisor:
         tty: true
         command: --daemon supervisor logviewer
@@ -25,6 +28,9 @@ services:
             - env=${storm_env}
             - ZK_SERVICE=${zk_link}
             - JVM_OPTS=-Xmx${storm_mem}m -Xms${storm_mem}m
+        labels:
+            io.rancher.container.hostname_override: container_name
+            io.rancher.scheduler.affinity:container_label_soft_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
         depends_on:
             - nimbus
 
@@ -40,6 +46,9 @@ services:
             - env=${storm_env}
             - ZK_SERVICE=${zk_link}
             - JVM_OPTS=-Xmx${storm_mem}m -Xms${storm_mem}m
+        labels:
+            io.rancher.container.hostname_override: container_name
+            io.rancher.scheduler.affinity:container_label_soft_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
         depends_on:
             - nimbus
             - supervisor
