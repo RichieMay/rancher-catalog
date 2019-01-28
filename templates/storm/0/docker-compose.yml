@@ -11,6 +11,7 @@ services:
         environment:
             - env=${storm_env}
             - ZK_SERVICE=${zk_link}
+            - STORM_DATA_DIR=${storm_data_dir}
             - JVM_OPTS=-Xmx${storm_mem}m -Xms${storm_mem}m
         labels:
             io.rancher.container.hostname_override: container_name
@@ -28,6 +29,7 @@ services:
         environment:
             - env=${storm_env}
             - ZK_SERVICE=${zk_link}
+            - STORM_DATA_DIR=${storm_data_dir}
             - JVM_OPTS=-Xmx${storm_mem}m -Xms${storm_mem}m
         labels:
             io.rancher.container.hostname_override: container_name
@@ -48,6 +50,7 @@ services:
         environment:
             - env=${storm_env}
             - ZK_SERVICE=${zk_link}
+            - STORM_DATA_DIR=${storm_data_dir}
             - JVM_OPTS=-Xmx${storm_mem}m -Xms${storm_mem}m
         labels:
             io.rancher.container.hostname_override: container_name
