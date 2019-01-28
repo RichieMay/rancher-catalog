@@ -46,7 +46,7 @@
         Choose the Zookeeper service to use. 
         It's really recommended a dedicated zookeeper service just for Storm.
       label: "Zookeeper stack/service"
-      default: "storm-zk/zk"
+      default: "zookeeper/zk"
       required: true
       type: "service"
 nimbus:
