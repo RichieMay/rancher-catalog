@@ -5,7 +5,7 @@
     (Experimental) Apache Storm cluster.
   minimum_rancher_version: v0.56.0
   maintainer: "RichieMay <meibo@sefon.com>"
-  uuid: storm-0
+  uuid: storm-rm
   questions:
     - variable: "storm_env"
       description: "Environment of apollo config."
