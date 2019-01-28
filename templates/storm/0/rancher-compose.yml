@@ -23,6 +23,12 @@
       required: true
       default: 1024
       type: "int"
+    - variable: "storm_data_dir"
+      description: "Directory where storm store data."
+      label: "Storm data dir:"
+      required: true
+      default: "/opt/storm/data"
+      type: "string"
     - variable: "nimbus_scale"
       description: "Number of nimbus nodes."
       label: "Nimbus Nodes:"
