@@ -13,3 +13,9 @@
       label: "Kafka Stack/Service"
       required: true
       type: "service"
+    - variable: "activemq_link"
+      description: |
+        Choose the Activemq Pusher service to use.
+      label: "Activemq Pusher Stack/Service"
+      required: true
+      type: "service"
