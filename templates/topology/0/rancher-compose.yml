@@ -1,0 +1,15 @@
+.catalog:
+  name: topology
+  version: 1.1.2-rancher1
+  description: |
+    (Experimental) Sefon Topology Submit Service.
+  minimum_rancher_version: v0.56.0
+  maintainer: "RichieMay <meibo@sefon.com>"
+  uuid: topology-rm
+  questions:
+    - variable: "kafka_link"
+      description: |
+        Choose the Kafka service to use.
+      label: "Kafka Stack/Service"
+      required: true
+      type: "service"
