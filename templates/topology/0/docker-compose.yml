@@ -15,5 +15,3 @@ services:
         image: registry.locman.cn/sefon-public/alpine-topology:1.1.2
         environment:
             - KAFKA_SERVICE=${kafka_link}
-        labels:
-            io.rancher.container.start_once: false
