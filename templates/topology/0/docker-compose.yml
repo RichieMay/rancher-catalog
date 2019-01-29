@@ -7,7 +7,7 @@ services:
         environment:
             - KAFKA_SERVICE=${kafka_link}
         labels:
-            io.rancher.container.start_once: true
+            io.rancher.container.start_once: false
 
     controller:
         tty: true
@@ -16,4 +16,4 @@ services:
         environment:
             - KAFKA_SERVICE=${kafka_link}
         labels:
-            io.rancher.container.start_once: true
+            io.rancher.container.start_once: false
