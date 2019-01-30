@@ -1,0 +1,21 @@
+.catalog:
+  name: connector
+  version: 1.1.2-rancher1
+  description: |
+    (Experimental) Kafka Connector.
+  minimum_rancher_version: v0.56.0
+  maintainer: "RichieMay <meibo@sefon.com>"
+  uuid: connector-rm
+  questions:
+    - variable: "kafka_link"
+      description: |
+        Choose the Kafka service to use.
+      label: "Kafka Stack/Service"
+      required: true
+      type: "service"
+    - variable: "activemq_link"
+      description: |
+        Choose the Activemq MQTT service to use.
+      label: "Activemq MQTT Stack/Service"
+      required: true
+      type: "service"

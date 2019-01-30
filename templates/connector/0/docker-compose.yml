@@ -1,0 +1,21 @@
+version: '2'
+services:
+    connect:
+        tty: true
+        command: --daemon connect
+        image: registry.locman.cn/sefon-public/alpine-topology:1.1.2
+        environment:
+            - KAFKA_SERVICE=${kafka_link}
+
+
+    mqtt:
+        tty: true
+        command: --connector mqtt
+        image: registry.locman.cn/sefon-public/alpine-topology:1.1.2
+        environment:
+            - KAFKA_SERVICE=${kafka_link}
+            - ACTIVEMQ_SERVICE=${activemq_link}
+        labels:
+            io.rancher.container.start_once: true
+        depends_on:
+            - connect
