@@ -9,7 +9,7 @@ services:
         external_links:
             - ${zk_link}:zk
         environment:
-            - env=${storm_env}
+            - ENV=${storm_env}
             - ZK_SERVICE=${zk_link}
             - STORM_DATA_DIR=${storm_data_dir}
             - JVM_OPTS=-Xmx${storm_mem}m -Xms${storm_mem}m
@@ -27,7 +27,7 @@ services:
         external_links:
             - ${zk_link}:zk
         environment:
-            - env=${storm_env}
+            - ENV=${storm_env}
             - ZK_SERVICE=${zk_link}
             - STORM_DATA_DIR=${storm_data_dir}
             - JVM_OPTS=-Xmx${storm_mem}m -Xms${storm_mem}m
@@ -48,7 +48,6 @@ services:
         external_links:
             - ${zk_link}:zk
         environment:
-            - env=${storm_env}
             - ZK_SERVICE=${zk_link}
             - STORM_DATA_DIR=${storm_data_dir}
             - JVM_OPTS=-Xmx${storm_mem}m -Xms${storm_mem}m
